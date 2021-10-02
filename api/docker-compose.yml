@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - ./api:/usr/src/api
+    ports:
+      - '8080:8080'
+    command: functions-framework --target=
+    tty: true
